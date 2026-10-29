@@ -1,0 +1,403 @@
+<!doctype html>
+<html lang="vi" data-lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Nhắc Uống Nước – AquaFlow cho iPhone</title>
+<meta name="description" content="AquaFlow giúp bạn uống đủ nước mỗi ngày với hiệu ứng sóng nước thư giãn, nhắc nhở thông minh, widget, Live Activity và đồng bộ Apple Health. Không cần tài khoản.">
+<meta name="theme-color" content="#E0F7FA" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#04263B" media="(prefers-color-scheme: dark)">
+<meta name="color-scheme" content="light dark">
+<link rel="canonical" href="https://thinhfc.github.io/aquaflow-legal/app/">
+<link rel="alternate" hreflang="vi" href="https://thinhfc.github.io/aquaflow-legal/app/?lang=vi">
+<link rel="alternate" hreflang="en" href="https://thinhfc.github.io/aquaflow-legal/app/?lang=en">
+<!-- Smart App Banner: replace APP_ID once the App Store ID is known -->
+<!-- <meta name="apple-itunes-app" content="app-id=APP_ID"> -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="AquaFlow">
+<meta property="og:title" content="Nhắc Uống Nước – AquaFlow">
+<meta property="og:description" content="Uống đủ nước, nhẹ nhàng như sóng. Nhắc nhở thông minh, widget, Dynamic Island, Apple Health.">
+<meta property="og:url" content="https://thinhfc.github.io/aquaflow-legal/app/">
+<meta property="og:image" content="https://thinhfc.github.io/aquaflow-legal/app/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="vi_VN">
+<meta property="og:locale:alternate" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="AquaFlow: Water Reminder">
+<meta name="twitter:description" content="A calm, motion-reactive water tracker for iPhone with smart reminders, widgets and Live Activity.">
+<meta name="twitter:image" content="https://thinhfc.github.io/aquaflow-legal/app/og-image.png">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='0' y2='1'%3E%3Cstop offset='0' stop-color='%23E0F7FA'/%3E%3Cstop offset='1' stop-color='%230288D1'/%3E%3C/linearGradient%3E%3C/defs%3E%3Cpath d='M32 4C22 18 12 29 12 40a20 20 0 0 0 40 0C52 29 42 18 32 4z' fill='url(%23g)'/%3E%3C/svg%3E">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"MobileApplication","name":"AquaFlow","alternateName":"Nhắc Uống Nước","operatingSystem":"iOS","applicationCategory":"HealthApplication","inLanguage":["vi","en","ja","ko","zh-Hans","es","pt-BR","id"]}
+</script>
+<style>
+:root{
+  --bg:#F5FCFE; --bg2:#E0F7FA; --card:#FFFFFF; --text:#0B2A3C; --muted:#4A6B7D;
+  --brand:#0288D1; --brand-d:#01579B; --line:rgba(2,136,209,.14); --shadow:0 10px 30px rgba(2,88,140,.12);
+  --grad:linear-gradient(180deg,#E0F7FA 0%,#0288D1 100%);
+  --radius:22px;
+}
+@media (prefers-color-scheme:dark){
+  :root{
+    --bg:#04192A; --bg2:#06263D; --card:#0B2E47; --text:#E6F6FB; --muted:#9CC3D6;
+    --brand:#4FC3F7; --brand-d:#B3E5FC; --line:rgba(79,195,247,.18); --shadow:0 10px 30px rgba(0,0,0,.35);
+    --grad:linear-gradient(180deg,#0B4F75 0%,#01304D 100%);
+  }
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--text);
+  font-family:ui-rounded,"SF Pro Rounded",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+  line-height:1.55;-webkit-font-smoothing:antialiased}
+a{color:var(--brand)}
+img,svg{max-width:100%}
+.wrap{max-width:1100px;margin:0 auto;padding:0 20px}
+/* language toggle: hide the inactive language */
+html[data-lang="vi"] [lang="en"]:not(html), html[data-lang="en"] [lang="vi"]:not(html){display:none!important}
+
+header.nav{position:sticky;top:0;z-index:10;backdrop-filter:saturate(1.4) blur(14px);-webkit-backdrop-filter:saturate(1.4) blur(14px);
+  background:color-mix(in srgb,var(--bg) 78%,transparent);border-bottom:1px solid var(--line)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:60px;gap:12px}
+.logo{display:flex;align-items:center;gap:10px;font-weight:800;font-size:1.1rem;text-decoration:none;color:var(--text)}
+.logo svg{width:28px;height:28px}
+.nav-links{display:flex;gap:18px;align-items:center}
+.nav-links a{text-decoration:none;color:var(--muted);font-weight:600;font-size:.95rem}
+.nav-links a:hover{color:var(--brand)}
+.lang{display:inline-flex;border:1px solid var(--line);border-radius:999px;overflow:hidden}
+.lang button{all:unset;cursor:pointer;padding:6px 12px;font-weight:700;font-size:.85rem;color:var(--muted)}
+.lang button[aria-pressed="true"]{background:var(--brand);color:#fff}
+@media (max-width:720px){.nav-links a{display:none}}
+
+/* hero */
+.hero{background:var(--grad);position:relative;overflow:hidden}
+.hero .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center;padding-top:64px;padding-bottom:96px}
+.eyebrow{display:inline-block;background:rgba(255,255,255,.65);color:#01579B;padding:6px 12px;border-radius:999px;font-weight:700;font-size:.85rem}
+@media (prefers-color-scheme:dark){.eyebrow{background:rgba(255,255,255,.12);color:#B3E5FC}}
+.hero h1{font-size:clamp(2.1rem,5vw,3.4rem);line-height:1.1;margin:16px 0 14px;letter-spacing:-.02em;color:#01395E}
+.hero p.lead{font-size:1.15rem;color:#0B3B57;max-width:34em;margin:0 0 26px}
+@media (prefers-color-scheme:dark){.hero h1{color:#fff}.hero p.lead{color:#CDEBF7}}
+.cta{display:flex;flex-wrap:wrap;gap:14px;align-items:center}
+.badge{display:inline-flex;align-items:center;gap:10px;background:#000;color:#fff;text-decoration:none;border-radius:12px;padding:10px 18px;min-height:52px;border:1px solid rgba(255,255,255,.35)}
+.badge svg{width:24px;height:24px;fill:#fff}
+.badge small{display:block;font-size:.68rem;opacity:.85;line-height:1}
+.badge strong{display:block;font-size:1.15rem;line-height:1.15}
+.ghost{font-weight:700;text-decoration:none;color:#01395E}
+@media (prefers-color-scheme:dark){.ghost{color:#E0F7FA}}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px;padding:0;list-style:none}
+.chips li{background:rgba(255,255,255,.55);color:#01395E;border-radius:999px;padding:5px 12px;font-size:.85rem;font-weight:600}
+@media (prefers-color-scheme:dark){.chips li{background:rgba(255,255,255,.1);color:#E0F7FA}}
+
+/* phone mock with animated water */
+.phone{justify-self:center;width:min(300px,78vw);aspect-ratio:9/19.5;border-radius:48px;background:#0A1C28;padding:12px;box-shadow:0 30px 60px rgba(1,57,94,.35);transform:rotate(-4deg)}
+.screen{position:relative;width:100%;height:100%;border-radius:38px;overflow:hidden;background:linear-gradient(180deg,#F2FBFD,#E0F7FA)}
+@media (prefers-color-scheme:dark){.screen{background:linear-gradient(180deg,#0A2234,#08324D)}}
+.island{position:absolute;top:10px;left:50%;transform:translateX(-50%);width:34%;height:26px;background:#000;border-radius:20px;z-index:3}
+.reading{position:absolute;top:22%;left:0;right:0;text-align:center;z-index:2}
+.reading b{display:block;font-size:2.3rem;color:#01395E;letter-spacing:-.02em}
+.reading span{color:#4A6B7D;font-weight:600;font-size:.9rem}
+@media (prefers-color-scheme:dark){.reading b{color:#fff}.reading span{color:#9CC3D6}}
+.water{position:absolute;left:-10%;right:-10%;bottom:0;height:62%;transform:rotate(3deg);animation:tilt 6s ease-in-out infinite;transform-origin:50% 100%}
+.water svg{position:absolute;left:0;width:200%;height:40px;top:-30px;animation:slide 5s linear infinite}
+.water svg.back{opacity:.5;animation-duration:8s;top:-22px}
+.water .body{position:absolute;inset:0;background:linear-gradient(180deg,#4FC3F7,#0288D1)}
+@keyframes slide{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@keyframes tilt{0%,100%{transform:rotate(3deg)}50%{transform:rotate(-3deg)}}
+.quick{position:absolute;bottom:18px;left:0;right:0;display:flex;justify-content:center;gap:8px;z-index:2}
+.quick i{font-style:normal;background:rgba(255,255,255,.9);color:#01579B;font-weight:800;font-size:.8rem;padding:8px 12px;border-radius:999px}
+@media (prefers-reduced-motion:reduce){.water,.water svg{animation:none}}
+.hero-wave{position:absolute;bottom:-1px;left:0;width:100%;height:70px;display:block}
+.hero-wave path{fill:var(--bg)}
+@media (max-width:860px){.hero .wrap{grid-template-columns:1fr;text-align:left;padding-top:40px}.phone{transform:none;margin-top:10px}}
+
+/* sections */
+section{padding:72px 0}
+.sec-head{max-width:640px;margin:0 0 36px}
+.sec-head h2{font-size:clamp(1.6rem,3.4vw,2.3rem);line-height:1.15;margin:0 0 10px;letter-spacing:-.01em}
+.sec-head p{color:var(--muted);margin:0;font-size:1.05rem}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+@media (max-width:900px){.grid{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:560px){.grid{grid-template-columns:1fr}}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:24px;box-shadow:var(--shadow)}
+.card .ic{width:44px;height:44px;border-radius:14px;display:grid;place-items:center;background:var(--bg2);font-size:1.35rem;margin-bottom:12px}
+.card h3{margin:0 0 6px;font-size:1.12rem}
+.card p{margin:0;color:var(--muted)}
+
+/* glance section */
+.alt{background:var(--bg2)}
+.glance{display:grid;grid-template-columns:1fr 1fr;gap:32px;align-items:center}
+@media (max-width:860px){.glance{grid-template-columns:1fr}}
+.mocks{display:grid;gap:16px}
+.di{justify-self:center;display:flex;align-items:center;gap:12px;background:#000;color:#fff;border-radius:999px;padding:10px 18px 10px 12px;min-width:260px;max-width:100%}
+.di .ring{width:30px;height:30px;border-radius:50%;background:conic-gradient(#4FC3F7 0 70%,#1E3A4C 70% 100%);display:grid;place-items:center}
+.di .ring::after{content:"";width:20px;height:20px;border-radius:50%;background:#000}
+.di b{font-size:1rem}.di span{opacity:.75;font-size:.85rem;margin-left:auto}
+.widgets{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+.w{background:var(--card);border:1px solid var(--line);border-radius:24px;padding:16px;box-shadow:var(--shadow)}
+.w.small{width:150px;height:150px;display:flex;flex-direction:column;justify-content:space-between}
+.w.small b{font-size:1.6rem;color:var(--brand-d)}
+.bar{height:10px;border-radius:99px;background:var(--line);overflow:hidden}
+.bar i{display:block;height:100%;width:70%;background:linear-gradient(90deg,#4FC3F7,#0288D1)}
+.w .btn{display:inline-block;background:var(--brand);color:#fff;border-radius:999px;padding:5px 10px;font-weight:800;font-size:.8rem;text-align:center}
+.w.lock{width:100%;max-width:320px;display:flex;gap:12px;align-items:center;justify-content:center;padding:12px}
+.notif{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:14px 16px;box-shadow:var(--shadow);max-width:360px;justify-self:center;width:100%}
+.notif small{color:var(--muted);font-weight:600}
+.notif p{margin:4px 0 10px}
+.notif .btn{display:inline-block;background:var(--bg2);color:var(--brand-d);border-radius:10px;padding:6px 12px;font-weight:800}
+ul.ticks{list-style:none;padding:0;margin:0;display:grid;gap:12px}
+ul.ticks li{padding-left:34px;position:relative}
+ul.ticks li::before{content:"";position:absolute;left:0;top:3px;width:22px;height:22px;border-radius:50%;background:var(--brand) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M9.5 16.2 5.3 12l-1.4 1.4 5.6 5.6 11-11-1.4-1.4z' fill='white'/%3E%3C/svg%3E") center/16px no-repeat}
+
+/* privacy */
+.privacy{display:grid;grid-template-columns:auto 1fr;gap:28px;align-items:center;background:var(--card);border:1px solid var(--line);border-radius:28px;padding:32px;box-shadow:var(--shadow)}
+.privacy .shield{width:84px;height:84px;border-radius:24px;background:var(--grad);display:grid;place-items:center;font-size:2.4rem}
+@media (max-width:640px){.privacy{grid-template-columns:1fr;padding:24px}}
+
+/* faq */
+.faq{max-width:780px}
+details{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:0 20px;margin-bottom:12px}
+summary{cursor:pointer;list-style:none;padding:18px 0;font-weight:700;display:flex;justify-content:space-between;gap:16px}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";color:var(--brand);font-size:1.3rem;line-height:1}
+details[open] summary::after{content:"–"}
+details p{margin:0 0 18px;color:var(--muted)}
+
+/* final cta + footer */
+.final{background:var(--grad);text-align:center;border-radius:32px;padding:48px 24px;margin:0 20px}
+.final h2{margin:0 0 10px;font-size:clamp(1.6rem,3.4vw,2.3rem);color:#01395E}
+.final p{margin:0 0 22px;color:#0B3B57}
+@media (prefers-color-scheme:dark){.final h2{color:#fff}.final p{color:#CDEBF7}}
+.final .cta{justify-content:center}
+footer{padding:40px 0 56px;color:var(--muted);font-size:.9rem}
+footer .wrap{display:flex;flex-wrap:wrap;gap:12px 24px;justify-content:space-between}
+footer nav{display:flex;gap:18px;flex-wrap:wrap}
+footer a{color:var(--muted)}
+.disclaimer{max-width:620px}
+:focus-visible{outline:3px solid var(--brand);outline-offset:3px;border-radius:6px}
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="logo" href="#top" aria-label="AquaFlow">
+      <svg viewBox="0 0 64 64" aria-hidden="true"><defs><linearGradient id="lg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#E0F7FA"/><stop offset="1" stop-color="#0288D1"/></linearGradient></defs><path d="M32 4C22 18 12 29 12 40a20 20 0 0 0 40 0C52 29 42 18 32 4z" fill="url(#lg)" stroke="#0288D1" stroke-width="2"/></svg>
+      AquaFlow
+    </a>
+    <nav class="nav-links" aria-label="Main">
+      <a href="#features"><span lang="vi">Tính năng</span><span lang="en">Features</span></a>
+      <a href="#glance"><span lang="vi">Widget</span><span lang="en">Widgets</span></a>
+      <a href="#privacy"><span lang="vi">Quyền riêng tư</span><span lang="en">Privacy</span></a>
+      <a href="#faq">FAQ</a>
+      <div class="lang" role="group" aria-label="Language / Ngôn ngữ">
+        <button type="button" data-set-lang="vi" aria-pressed="true">VI</button>
+        <button type="button" data-set-lang="en" aria-pressed="false">EN</button>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+<!-- HERO -->
+<section class="hero" style="padding:0">
+  <div class="wrap">
+    <div>
+      <span class="eyebrow"><span lang="vi">Ứng dụng iPhone · Miễn tài khoản</span><span lang="en">iPhone app · No account needed</span></span>
+      <h1>
+        <span lang="vi">Uống đủ nước,<br>nhẹ nhàng như sóng.</span>
+        <span lang="en">Stay hydrated,<br>calm as a wave.</span>
+      </h1>
+      <p class="lead">
+        <span lang="vi">Mỗi cốc nước bạn uống làm mặt nước dâng lên và nghiêng theo chiếc iPhone trong tay. Nhắc nhở thông minh tự dừng khi bạn đã đủ, còn widget và Dynamic Island giúp bạn ghi lại chỉ bằng một chạm.</span>
+        <span lang="en">Every glass makes the water rise and tilt with the iPhone in your hand. Smart reminders stop once you've had enough, and widgets plus the Dynamic Island let you log in a single tap.</span>
+      </p>
+      <div class="cta">
+        <a class="badge" href="https://apps.apple.com/app/id6766606828" aria-label="Download on the App Store">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16.37 12.6c-.02-2.2 1.8-3.26 1.88-3.31-1.03-1.5-2.62-1.7-3.18-1.72-1.35-.14-2.64.8-3.33.8-.69 0-1.74-.78-2.86-.76-1.47.02-2.83.86-3.59 2.17-1.53 2.66-.39 6.6 1.1 8.75.73 1.05 1.6 2.24 2.73 2.2 1.1-.05 1.51-.71 2.84-.71 1.32 0 1.7.71 2.86.69 1.18-.02 1.93-1.07 2.65-2.13.84-1.22 1.18-2.4 1.2-2.46-.03-.01-2.3-.88-2.3-3.52zM14.2 6.13c.6-.73 1.01-1.75.9-2.76-.87.04-1.92.58-2.54 1.31-.56.64-1.05 1.67-.92 2.66.97.08 1.96-.49 2.56-1.21z"/></svg>
+          <span><small lang="vi">Tải về trên</small><small lang="en">Download on the</small><strong>App Store</strong></span>
+        </a>
+        <a class="ghost" href="#features"><span lang="vi">Xem tính năng ↓</span><span lang="en">See features ↓</span></a>
+      </div>
+      <ul class="chips" aria-label="Highlights">
+        <li>Apple Health</li><li>Dynamic Island</li><li>Siri</li>
+        <li><span lang="vi">8 ngôn ngữ</span><span lang="en">8 languages</span></li>
+      </ul>
+    </div>
+
+    <div class="phone" role="img" aria-label="AquaFlow home screen with animated water wave at 1,750 of 2,500 ml">
+      <div class="screen">
+        <div class="island"></div>
+        <div class="reading"><b><span lang="vi">1.750 ml</span><span lang="en">1,750 ml</span></b><span lang="vi">/ 2.500 ml hôm nay</span><span lang="en">/ 2,500 ml today</span></div>
+        <div class="water" aria-hidden="true">
+          <svg class="back" viewBox="0 0 1200 40" preserveAspectRatio="none"><path d="M0 20 Q 75 0 150 20 T 300 20 T 450 20 T 600 20 T 750 20 T 900 20 T 1050 20 T 1200 20 V40 H0z" fill="#81D4FA"/></svg>
+          <svg viewBox="0 0 1200 40" preserveAspectRatio="none"><path d="M0 22 Q 100 4 200 22 T 400 22 T 600 22 T 800 22 T 1000 22 T 1200 22 V40 H0z" fill="#4FC3F7"/></svg>
+          <div class="body" style="top:10px"></div>
+        </div>
+        <div class="quick" aria-hidden="true"><i>💧 +250</i><i>💧 +500</i><i>☕ +750</i></div>
+      </div>
+    </div>
+  </div>
+  <svg class="hero-wave" viewBox="0 0 1440 70" preserveAspectRatio="none" aria-hidden="true"><path d="M0 40 C 240 0 480 70 720 40 S 1200 0 1440 40 V70 H0z"/></svg>
+</section>
+
+<!-- FEATURES -->
+<section id="features">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2><span lang="vi">Mọi thứ bạn cần để uống đủ nước</span><span lang="en">Everything you need to drink enough</span></h2>
+      <p><span lang="vi">Đơn giản khi dùng, dễ chịu khi nhìn và tôn trọng thời gian của bạn.</span><span lang="en">Simple to use, pleasant to look at, and respectful of your time.</span></p>
+    </div>
+    <div class="grid">
+      <article class="card"><div class="ic" aria-hidden="true">🌊</div>
+        <h3><span lang="vi">Sóng nước sống động</span><span lang="en">A living water wave</span></h3>
+        <p><span lang="vi">Hiệu ứng sóng mô phỏng vật lý, nghiêng theo cảm biến chuyển động của iPhone.</span><span lang="en">Physics-based waves that tilt with your iPhone's motion sensors.</span></p></article>
+      <article class="card"><div class="ic" aria-hidden="true">🥤</div>
+        <h3><span lang="vi">Ghi lại chỉ một chạm</span><span lang="en">Log in one tap</span></h3>
+        <p><span lang="vi">Bấm 250, 500 hoặc 750 ml, hoặc chọn từ 150 đến 1.000 ml. Cà phê, trà, nước ép… ghi bằng Siri.</span><span lang="en">Tap 250, 500 or 750 ml, or pick 150 to 1,000 ml. Log coffee, tea, juice and more with Siri.</span></p></article>
+      <article class="card"><div class="ic" aria-hidden="true">🔔</div>
+        <h3><span lang="vi">Nhắc nhở biết điểm dừng</span><span lang="en">Reminders that know when to stop</span></h3>
+        <p><span lang="vi">Chỉ nhắc trong giờ thức, tự dừng khi đạt mục tiêu, và có nút “+250 ml” ngay trên thông báo.</span><span lang="en">Only during waking hours, they stop at your goal, and there's a “+250 ml” button right on the notification.</span></p></article>
+      <article class="card"><div class="ic" aria-hidden="true">☀️</div>
+        <h3><span lang="vi">Mục tiêu theo thời tiết</span><span lang="en">Weather-aware goal</span></h3>
+        <p><span lang="vi">Tuỳ chọn bật WeatherKit để mục tiêu tăng nhẹ vào ngày nắng nóng. Bạn vẫn toàn quyền chỉnh sửa.</span><span lang="en">Opt in to WeatherKit and your goal rises a little on hot days. You can always change it.</span></p></article>
+      <article class="card"><div class="ic" aria-hidden="true">📊</div>
+        <h3><span lang="vi">Thống kê rõ ràng</span><span lang="en">Clear statistics</span></h3>
+        <p><span lang="vi">Biểu đồ theo ngày, tuần, tháng giúp bạn nhìn lại thói quen của mình.</span><span lang="en">Daily, weekly and monthly charts to look back on your habit.</span></p></article>
+      <article class="card"><div class="ic" aria-hidden="true">❤️</div>
+        <h3><span lang="vi">Đồng bộ Apple Health</span><span lang="en">Apple Health sync</span></h3>
+        <p><span lang="vi">Mỗi lần uống được ghi vào Apple Health khi bạn cho phép.</span><span lang="en">Every drink is saved to Apple Health once you allow it.</span></p></article>
+    </div>
+  </div>
+</section>
+
+<!-- GLANCE: widgets / live activity / siri -->
+<section id="glance" class="alt">
+  <div class="wrap glance">
+    <div>
+      <div class="sec-head">
+        <h2><span lang="vi">Ghi lại mà không cần mở app</span><span lang="en">Log without opening the app</span></h2>
+        <p><span lang="vi">Tiến độ của bạn luôn hiện ra đúng nơi bạn nhìn.</span><span lang="en">Your progress shows up wherever you're already looking.</span></p>
+      </div>
+      <ul class="ticks">
+        <li><span lang="vi"><b>Widget tương tác</b> trên màn hình chính và màn hình khóa, bấm là thêm nước.</span><span lang="en"><b>Interactive widgets</b> on the Home Screen and Lock Screen. Tap to add water.</span></li>
+        <li><span lang="vi"><b>Live Activity & Dynamic Island</b> hiển thị tiến độ theo thời gian thực.</span><span lang="en"><b>Live Activity & Dynamic Island</b> show your progress in real time.</span></li>
+        <li><span lang="vi"><b>Siri & Phím tắt</b>: nói “Ghi một ly nước trong AquaFlow”.</span><span lang="en"><b>Siri & Shortcuts</b>: say “Log a glass of water in AquaFlow”.</span></li>
+        <li><span lang="vi"><b>Thông báo có nút “+250 ml”</b> để ghi lại ngay lập tức.</span><span lang="en"><b>Notifications with a “+250 ml” action</b> log water instantly.</span></li>
+      </ul>
+    </div>
+    <div class="mocks" aria-hidden="true">
+      <div class="di"><div class="ring"></div><b><span lang="vi">1.750 / 2.500 ml</span><span lang="en">1,750 / 2,500 ml</span></b><span>70%</span></div>
+      <div class="widgets">
+        <div class="w small"><span style="color:var(--muted);font-weight:700">💧 AquaFlow</span><b>70%</b><div class="bar"><i></i></div><span class="btn">+250 ml</span></div>
+        <div class="w small"><span style="color:var(--muted);font-weight:700"><span lang="vi">Còn lại</span><span lang="en">Left</span></span><b>750 ml</b><span style="color:var(--muted);font-size:.85rem"><span lang="vi">Cố lên! 💪</span><span lang="en">Keep going! 💪</span></span></div>
+      </div>
+      <div class="notif">
+        <small>💧 AQUAFLOW · <span lang="vi">bây giờ</span><span lang="en">now</span></small>
+        <p><span lang="vi">Đến giờ uống một ngụm rồi! Bạn đã đạt 70% mục tiêu hôm nay.</span><span lang="en">Time for a sip! You're at 70% of today's goal.</span></p>
+        <span class="btn">+250 ml</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRIVACY -->
+<section id="privacy">
+  <div class="wrap">
+    <div class="privacy">
+      <div class="shield" aria-hidden="true">🔒</div>
+      <div>
+        <h2 style="margin:0 0 8px"><span lang="vi">Quyền riêng tư là mặc định</span><span lang="en">Private by default</span></h2>
+        <p style="margin:0 0 12px;color:var(--muted)">
+          <span lang="vi">AquaFlow dùng được đầy đủ mà không cần tài khoản. Đăng nhập bằng Apple hoặc Google chỉ là tuỳ chọn. Thời tiết và Apple Health chỉ được dùng khi bạn cho phép, và bạn có thể tắt bất cứ lúc nào.</span>
+          <span lang="en">AquaFlow works fully without an account. Sign in with Apple or Google is optional. Weather and Apple Health are used only with your permission, and you can turn them off anytime.</span>
+        </p>
+        <a href="../"><span lang="vi">Đọc chính sách quyền riêng tư →</span><span lang="en">Read the privacy policy →</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq" class="alt">
+  <div class="wrap faq">
+    <div class="sec-head"><h2><span lang="vi">Câu hỏi thường gặp</span><span lang="en">Frequently asked questions</span></h2></div>
+
+    <details><summary><span lang="vi">Tôi có cần tạo tài khoản không?</span><span lang="en">Do I need an account?</span></summary>
+      <p><span lang="vi">Không. Bạn có thể dùng AquaFlow ngay lập tức. Đăng nhập bằng Apple hoặc Google là tuỳ chọn.</span><span lang="en">No. You can start using AquaFlow right away. Sign in with Apple or Google is optional.</span></p></details>
+
+    <details><summary><span lang="vi">Nhắc nhở có làm phiền tôi cả ngày không?</span><span lang="en">Will reminders bug me all day?</span></summary>
+      <p><span lang="vi">Không. AquaFlow chỉ nhắc trong khung giờ bạn thức và tự dừng khi bạn đã đạt mục tiêu trong ngày.</span><span lang="en">No. AquaFlow only reminds you during your waking hours and stops once you reach your daily goal.</span></p></details>
+
+    <details><summary><span lang="vi">Mục tiêu theo thời tiết hoạt động thế nào?</span><span lang="en">How does the weather-based goal work?</span></summary>
+      <p><span lang="vi">Nếu bạn bật tính năng này, AquaFlow dùng WeatherKit để tăng nhẹ mục tiêu vào những ngày nóng. Tính năng này hoàn toàn tuỳ chọn và bạn luôn có thể tự đặt mục tiêu.</span><span lang="en">If you turn it on, AquaFlow uses WeatherKit to gently raise your goal on hot days. It's entirely optional, and you can always set your own goal.</span></p></details>
+
+    <details><summary><span lang="vi">AquaFlow có đồng bộ với Apple Health không?</span><span lang="en">Does it sync with Apple Health?</span></summary>
+      <p><span lang="vi">Có. Khi bạn cấp quyền, mỗi lần uống được ghi vào Apple Health.</span><span lang="en">Yes. Once you grant permission, every drink is saved to Apple Health.</span></p></details>
+
+    <details><summary><span lang="vi">Có widget và Dynamic Island không?</span><span lang="en">Are there widgets and Dynamic Island support?</span></summary>
+      <p><span lang="vi">Có. AquaFlow có widget tương tác cho màn hình chính và màn hình khóa, cùng Live Activity hiển thị trên Dynamic Island (trên các iPhone có Dynamic Island).</span><span lang="en">Yes. There are interactive Home Screen and Lock Screen widgets, plus a Live Activity that appears in the Dynamic Island on supported iPhones.</span></p></details>
+
+    <details><summary><span lang="vi">Ứng dụng hỗ trợ những ngôn ngữ nào?</span><span lang="en">Which languages are supported?</span></summary>
+      <p><span lang="vi">Tiếng Việt, English, 日本語, 한국어, 简体中文, Español, Português (Brasil) và Bahasa Indonesia.</span><span lang="en">Vietnamese, English, Japanese, Korean, Simplified Chinese, Spanish, Brazilian Portuguese and Indonesian.</span></p></details>
+
+    <details><summary><span lang="vi">AquaFlow có thay thế lời khuyên y tế không?</span><span lang="en">Is AquaFlow medical advice?</span></summary>
+      <p><span lang="vi">Không. AquaFlow là công cụ giúp bạn ghi lại thói quen uống nước, không phải thiết bị y tế. Nếu bạn có vấn đề sức khỏe, hãy hỏi chuyên gia y tế về lượng nước phù hợp.</span><span lang="en">No. AquaFlow is a tool for tracking your drinking habit, not a medical device. If you have a health condition, ask a healthcare professional how much you should drink.</span></p></details>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section>
+  <div class="final">
+    <h2><span lang="vi">Bắt đầu uống đủ nước từ hôm nay</span><span lang="en">Start drinking enough today</span></h2>
+    <p><span lang="vi">Tải AquaFlow cho iPhone. Không cần tài khoản.</span><span lang="en">Get AquaFlow for iPhone. No account needed.</span></p>
+    <div class="cta">
+      <a class="badge" href="https://apps.apple.com/app/id6766606828" aria-label="Download on the App Store">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16.37 12.6c-.02-2.2 1.8-3.26 1.88-3.31-1.03-1.5-2.62-1.7-3.18-1.72-1.35-.14-2.64.8-3.33.8-.69 0-1.74-.78-2.86-.76-1.47.02-2.83.86-3.59 2.17-1.53 2.66-.39 6.6 1.1 8.75.73 1.05 1.6 2.24 2.73 2.2 1.1-.05 1.51-.71 2.84-.71 1.32 0 1.7.71 2.86.69 1.18-.02 1.93-1.07 2.65-2.13.84-1.22 1.18-2.4 1.2-2.46-.03-.01-2.3-.88-2.3-3.52zM14.2 6.13c.6-.73 1.01-1.75.9-2.76-.87.04-1.92.58-2.54 1.31-.56.64-1.05 1.67-.92 2.66.97.08 1.96-.49 2.56-1.21z"/></svg>
+        <span><small lang="vi">Tải về trên</small><small lang="en">Download on the</small><strong>App Store</strong></span>
+      </a>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="disclaimer">
+      © 2026 AquaFlow ·
+      <span lang="vi">AquaFlow không phải thiết bị y tế và không cung cấp lời khuyên y tế.</span>
+      <span lang="en">AquaFlow is not a medical device and does not provide medical advice.</span>
+      <br><small>Apple, iPhone, Apple Health, Siri and Dynamic Island are trademarks of Apple Inc.</small>
+    </div>
+    <nav aria-label="Footer">
+      <a href="../"><span lang="vi">Chính sách quyền riêng tư</span><span lang="en">Privacy Policy</span></a>
+      <a href="../support.html"><span lang="vi">Hỗ trợ</span><span lang="en">Support</span></a>
+    </nav>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var META = {
+    vi:{title:"Nhắc Uống Nước – AquaFlow cho iPhone",
+        desc:"AquaFlow giúp bạn uống đủ nước mỗi ngày với hiệu ứng sóng nước thư giãn, nhắc nhở thông minh, widget, Live Activity và đồng bộ Apple Health. Không cần tài khoản."},
+    en:{title:"AquaFlow: Water Reminder for iPhone",
+        desc:"A calm, motion-reactive water tracker for iPhone with smart reminders that stop at your goal, interactive widgets, Live Activity and Apple Health sync. No account needed."}
+  };
+  function setLang(l){
+    if(!META[l]) l="vi";
+    var root=document.documentElement;
+    root.setAttribute("data-lang",l); root.setAttribute("lang",l);
+    document.title=META[l].title;
+    var d=document.querySelector('meta[name="description"]'); if(d) d.setAttribute("content",META[l].desc);
+    document.querySelectorAll("[data-set-lang]").forEach(function(b){b.setAttribute("aria-pressed",String(b.dataset.setLang===l));});
+    try{localStorage.setItem("aquaflow-lang",l);}catch(e){}
+  }
+  var q=new URLSearchParams(location.search).get("lang"), saved=null;
+  try{saved=localStorage.getItem("aquaflow-lang");}catch(e){}
+  var guess=(navigator.language||"vi").toLowerCase().indexOf("vi")===0?"vi":"en";
+  setLang(q||saved||guess);
+  document.querySelectorAll("[data-set-lang]").forEach(function(b){b.addEventListener("click",function(){setLang(b.dataset.setLang);});});
+})();
+</script>
+</body>
+</html>
